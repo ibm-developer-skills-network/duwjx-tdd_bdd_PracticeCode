@@ -22,7 +22,7 @@ db.session.close() # close the database connection
 
 Use the class level fixtures to invoke `db.create_all()` before all tests and `db.session.close()` after all tests.
 
-Run `nosetests` to make sure that your test case executes as expected.
+Run `nosetests` to make sure that your test case executes without errors.
 
 ```bash
 nosetests
@@ -33,7 +33,7 @@ nosetests
 ```python
 @classmethod
 def setUpClass(cls):
-    """ Load data needed by tests """
+    """ Connect and Load data needed by tests """
     db.create_all()  # make our SQLAlchemy tables
 
 
@@ -61,14 +61,14 @@ with open('tests/fixtures/account_data.json') as json_data:
 ```python
 @classmethod
 def setUpClass(cls):
-    """ Load data needed by tests """
+    """ Connect and Load data needed by tests """
     db.create_all()  # make our SQLAlchemy tables
     global ACCOUNT_DATA
     with open('tests/fixtures/account_data.json') as json_data:
         ACCOUNT_DATA = json.load(json_data)
 ```
 
-Run `nosetests` to make sure that your test case executes as expected.
+Run `nosetests` to make sure that your test case executes without errors.
 
 ```bash
 nosetests
@@ -99,6 +99,24 @@ Run `nosetests` to make sure that your test case passes.
 nosetests
 ```
 
+You should see:
+
+```bash
+Test Account Model
+- Test create a single Account
+
+Name                 Stmts   Miss  Cover   Missing
+--------------------------------------------------
+models/__init__.py       6      0   100%
+models/account.py       44     17    61%   26, 30, 34-41, 51-54, 58-60, 80-81
+--------------------------------------------------
+TOTAL                   50     17    66%
+----------------------------------------------------------------------
+Ran 1 test in 0.340s
+
+OK
+```
+
 ### Step 4: Write a test case to create all accounts
 
 Now that we know that one account can be successfully created, let's write a test case that creates all 5 of the accounts in the `ACCOUNT_DATA` dictionary.
@@ -122,7 +140,7 @@ Run `nosetests` to make sure that your test case passes.
 nosetests
 ```
 
-**ERROR:** This time the test did not pass! You should have received the following error **AssertionError: 7 != 1**:
+**ERROR:** This time the tests did not pass! You should have received two error about **AssertionError: 6 != 5** and **AssertionError: 7 != 1**:
 
 ```bash
 ======================================================================
@@ -171,7 +189,26 @@ Run `nosetests` to make sure that your test case passes.
 nosetests
 ```
 
-Congratulations! All of your test cases should pass this time.
+You should see the following report:
+
+```bash
+Test Account Model
+- Test creating multiple Accounts
+- Test create a single Account
+
+Name                 Stmts   Miss  Cover   Missing
+--------------------------------------------------
+models/__init__.py       6      0   100%
+models/account.py       44     17    61%   26, 30, 34-41, 51-54, 58-60, 80-81
+--------------------------------------------------
+TOTAL                   50     17    66%
+----------------------------------------------------------------------
+Ran 2 tests in 0.346s
+
+OK
+```
+
+**Congratulations!** All of your test cases have passed this time.
 
 ## Conclusion
 
