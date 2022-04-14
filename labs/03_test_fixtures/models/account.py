@@ -25,7 +25,7 @@ class Account(db.Model):
     def __repr__(self):
         return '<Account %r>' % self.name
 
-    def as_dict(self) -> dict:
+    def to_dict(self) -> dict:
         """Serializes the class as a dictionary"""
         return {c.name: getattr(self, c.name) for c in self.__table__.columns}
 
