@@ -1,0 +1,7 @@
+# Dependecies for this lab
+Flask
+Flask-SQLAlchemy
+nose
+pinocchio
+coverage
+factory-boy
