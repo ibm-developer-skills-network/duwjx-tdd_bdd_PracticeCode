@@ -31,14 +31,8 @@ class Account(db.Model):
 
     def from_dict(self, data: dict) -> None:
         """Sets attributes from a dictionary"""
-        try:
-            for key, value in data.items():
-                setattr(self, key, value)
-        except TypeError as error:
-            raise DataValidationError(
-                "Invalid account: body of request contained bad or no data " + str(error)
-            )
-        return self
+        for key, value in data.items():
+            setattr(self, key, value)
 
     def create(self):
         """Creates a Account to the database"""
