@@ -1,0 +1,5 @@
+# Dependecies for this lab
+requests
+nose
+pinocchio
+coverage
