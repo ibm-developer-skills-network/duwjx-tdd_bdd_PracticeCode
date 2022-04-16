@@ -3,3 +3,4 @@ requests
 nose
 pinocchio
 coverage
+pylint
