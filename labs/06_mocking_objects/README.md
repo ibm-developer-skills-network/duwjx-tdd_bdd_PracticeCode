@@ -6,6 +6,15 @@ Welcome to the **Mocking Objects** lab. Mocking is a process for creating object
 
 In this lab we are going to use both patching and mocking to mock the real calls to the Internet Movie Database (IMDb) service during testing. We are also going to use test fixtures to provide us with valid responses that we would have gotten back from the IMDb service had we really called it. In this way, we can control what is returned from the service without every having to make an actual call to it.
 
+## Learning Objectives
+
+After completing this lab you will be able to:
+
+- Use test fixtures to load mock responses from real APIs
+- Understand how to use the patch decorator during testing
+- Utilize the Mock class to mimic the behavior of other objects
+- Write test cases that patch and mock returned objects using test fixture data
+
 ## Establishing Test Fixtures
 
 In the `tests/fixtures/` folder you will find a file called `imdb_responses.json`. We created this file by actually calling the IMDb API and recording the responses that came back. Then we gave each one of them a name and placed them into a `json` file to be loaded during test. 

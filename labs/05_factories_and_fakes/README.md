@@ -4,6 +4,14 @@ Welcome to the Factories and Fakes lab. You often need fake data to test against
 
 In this lab we're going to see how to use a popular Python package called **FactoryBoy** to provide fake data for testing.
 
+## Learning Objectives
+
+After completing this lab you will be able to:
+
+- Understand how to create a Factory class
+- Utilize the Faker class and Fuzzy attributes to provide realistic test data
+- Write test cases that use Factory classes to provide test data
+
 ## Prerequisites
 
 Let's start by installing the required Python packages for this lab:
@@ -326,3 +334,16 @@ Congratulations on completing the Factories and Fakes lab. Hopefully you have a 
 
 Try and apply what you have learned to your personal projects. Anywhere you have created static data to test your code, you can substitute dynamic factories to make testing more robust.
 
+## Author(s)
+
+John Rofrano
+
+## Changelog
+
+| Date | Version | Changed by | Change Description |
+|------|--------|--------|---------|
+| 2022-04-15 | 1.0 | Rofrano | Create new Lab |
+|   |   |   |   |
+|   |   |   |   |
+
+## <h3 align="center"> © IBM Corporation 2022. All rights reserved. <h3/>

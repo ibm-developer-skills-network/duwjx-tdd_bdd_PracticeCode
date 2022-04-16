@@ -213,3 +213,17 @@ OK
 ## Conclusion
 
 We have seen how using test fixtures allows us to control the state of the system before and after each test so that tests run in isolation and get repeatable result every time.
+
+## Author(s)
+
+John Rofrano
+
+## Changelog
+
+| Date | Version | Changed by | Change Description |
+|------|--------|--------|---------|
+| 2022-04-14 | 1.0 | Rofrano | Create new Lab |
+|   |   |   |   |
+|   |   |   |   |
+
+## <h3 align="center"> © IBM Corporation 2022. All rights reserved. <h3/>

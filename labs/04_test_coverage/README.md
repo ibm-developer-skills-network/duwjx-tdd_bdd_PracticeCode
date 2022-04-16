@@ -307,3 +307,16 @@ OK
 
 You did it! You wrote enough test cases to execute every line of code in the `account` module. You now know that at least every line of code works when it is tested with some known data. There could still be bugs in the code which will only reveal themselves wen sending bad or unexpected data into you code. Never give up writing new test cases that cover more possibilities.
 
+## Author(s)
+
+John Rofrano
+
+## Changelog
+
+| Date | Version | Changed by | Change Description |
+|------|--------|--------|---------|
+| 2022-04-14 | 1.0 | Rofrano | Create new Lab |
+|   |   |   |   |
+|   |   |   |   |
+
+## <h3 align="center"> © IBM Corporation 2022. All rights reserved. <h3/>
