@@ -17,7 +17,7 @@ class TestStack(TestCase):
         raise Exception("not implemented")
 
     def test_pop(self):
-        """Test poping an item of off the stack"""
+        """Test popping an item of off the stack"""
         raise Exception("not implemented")
 
     def test_peek(self):
