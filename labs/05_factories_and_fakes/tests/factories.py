@@ -1,3 +1,13 @@
+"""
+AccountFactory class using FactoryBoy
+
+Documentation on Faker Providers:
+    https://faker.readthedocs.io/en/master/providers/baseprovider.html
+
+Documentation on Fuzzy Attributes:
+    https://factoryboy.readthedocs.io/en/stable/fuzzy.html
+
+"""
 import factory
 from datetime import date
 from factory.fuzzy import FuzzyChoice, FuzzyDate
