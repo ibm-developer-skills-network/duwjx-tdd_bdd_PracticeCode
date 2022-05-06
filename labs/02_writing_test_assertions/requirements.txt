@@ -1,4 +1,4 @@
-# Dependecies for this lab
+# Dependencies for this lab
 nose
 pinocchio
 coverage

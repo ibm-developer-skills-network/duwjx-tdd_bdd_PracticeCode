@@ -35,20 +35,20 @@ class Account(db.Model):
             setattr(self, key, value)
 
     def create(self):
-        """Creates a Account to the database"""
+        """Creates an Account in the database"""
         logger.info("Creating %s", self.name)
         db.session.add(self)
         db.session.commit()
 
     def update(self):
-        """Updates a Account to the database"""
+        """Updates an Account in the database"""
         logger.info("Saving %s", self.name)
         if not self.id:
             raise DataValidationError("Update called with empty ID field")
         db.session.commit()
 
     def delete(self):
-        """Removes a Account from the data store"""
+        """Removes an Account from the database"""
         logger.info("Deleting %s", self.name)
         db.session.delete(self)
         db.session.commit()
@@ -65,7 +65,7 @@ class Account(db.Model):
 
     @classmethod
     def find(cls, account_id: int):
-        """Finds a Account by it's ID
+        """Finds an Account by it's ID
         :param account_id: the id of the Account to find
         :type account_id: int
         :return: an instance with the account_id, or None if not found
