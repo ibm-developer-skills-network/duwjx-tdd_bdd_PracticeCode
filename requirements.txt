@@ -1,0 +1,11 @@
+# Dependencies for all lab
+Flask
+Flask-SQLAlchemy
+requests
+
+# Testing dependencies
+nose
+pinocchio
+coverage
+factory-boy
+pylint
