@@ -13,7 +13,7 @@ class TestAccountModel(TestCase):
 
     @classmethod
     def setUpClass(cls):
-        """ Connect and Load data needed by tests """
+        """ Connect and load data needed by tests """
 
     @classmethod
     def tearDownClass(cls):
