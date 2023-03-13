@@ -1,33 +1,42 @@
 {
-	"name": "Python 3",
+	"name": "Theia",
 	"dockerFile": "Dockerfile",
 	"context": "..",
-	"remoteUser": "devops",
-	"workspaceFolder": "/app",
-    "workspaceMount": "source=${localWorkspaceFolder},target=/app,type=bind,consistency=delegated",
-    "runArgs": ["-h","ibm-dev"],
+	"remoteUser": "theia",
+	"workspaceFolder": "/project",
+    "workspaceMount": "source=${localWorkspaceFolder},target=/project,type=bind,consistency=delegated",
+    "runArgs": ["-h","theia"],
     "remoteEnv": {
-      "FLASK_ENV": "development",
-      "FLASK_APP": "counter:app"
+      "FLASK_DEBUG": "true",
+      "FLASK_APP": "counter:app",
+	  "PORT": 8080,
+	  "PYTHONIOENCODING": "utf-8"
     },
-	"extensions": [
-		"VisualStudioExptTeam.vscodeintellicode",
-		"ms-python.python",
-		"ms-python.vscode-pylance",
-		"alexkrechik.cucumberautocomplete",
-		"yzhang.markdown-all-in-one",
-		"bierner.github-markdown-preview",
-		"hnw.vscode-auto-open-markdown-preview",
-		"DavidAnson.vscode-markdownlint",
-		"donjayamanne.githistory",
-		"GitHub.vscode-pull-request-github",
-		"hbenl.vscode-test-explorer",
-		"njpwerner.autodocstring",
-		"cstrap.flask-snippets",
-		"wholroyd.jinja",
-		"redhat.vscode-yaml",
-		"streetsidesoftware.code-spell-checker"
-	],
-	// "forwardPorts": [5000],
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"VisualStudioExptTeam.vscodeintellicode",
+				"ms-python.python",
+				"ms-python.vscode-pylance",
+				"alexkrechik.cucumberautocomplete",
+				"yzhang.markdown-all-in-one",
+				"bierner.github-markdown-preview",
+				"hnw.vscode-auto-open-markdown-preview",
+				"DavidAnson.vscode-markdownlint",
+				"donjayamanne.githistory",
+				"GitHub.vscode-pull-request-github",
+				"hbenl.vscode-test-explorer",
+				"njpwerner.autodocstring",
+				"cstrap.flask-snippets",
+				"wholroyd.jinja",
+				"redhat.vscode-yaml",
+				"ms-azuretools.vscode-docker",
+				"streetsidesoftware.code-spell-checker"
+			]
+		}
+	},
 	"postCreateCommand": "sudo pip install -r requirements.txt",
+	"features": {
+		"docker-in-docker": "latest"
+	}
 }
