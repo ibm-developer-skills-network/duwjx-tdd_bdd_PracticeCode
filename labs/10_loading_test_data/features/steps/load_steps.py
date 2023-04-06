@@ -8,6 +8,6 @@ For information on Waiting until elements are present in the HTML see:
 """
 import requests
 from behave import given
-from compare import expect
 
 # Load data here
+
