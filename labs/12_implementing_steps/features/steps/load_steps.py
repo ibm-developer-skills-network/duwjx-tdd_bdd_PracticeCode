@@ -16,10 +16,10 @@ def step_impl(context):
     """Refresh all Pets in the database"""
 
     # List all of the pets and delete them one by one
-    response = requests.get(f"{context.BASE_URL}/pets")
+    response = requests.get(f"{context.base_url}/pets")
     assert response.status_code == 200
     for pet in response.json():
-        response = requests.delete(f"{context.BASE_URL}/pets/{pet['id']}")
+        response = requests.delete(f"{context.base_url}/pets/{pet['id']}")
         assert response.status_code == 204
 
     # load the database with new pets
@@ -31,5 +31,5 @@ def step_impl(context):
             "gender": row['gender'],
             "birthday": row['birthday']
         }
-        response = requests.post(f"{context.BASE_URL}/pets", json=payload)
+        response = requests.post(f"{context.base_url}/pets", json=payload)
         assert response.status_code == 201
