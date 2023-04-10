@@ -10,18 +10,14 @@ BASE_URL = getenv('BASE_URL', 'http://localhost:8080')
 
 def before_all(context):
     """ Executed once before all tests """
-    context.BASE_URL = BASE_URL
-    context.WAIT_SECONDS = WAIT_SECONDS
-    # Setup Chrome webdriver
+    context.base_url = BASE_URL
+    context.wait_seconds = WAIT_SECONDS
+    # Instantiate the Chrome WebDriver
     options = webdriver.ChromeOptions()
-    options.add_argument("--no-sandbox")  # Bypass OS security model
+    options.add_argument("--no-sandbox") # Bypass OS security model
     options.add_argument("--headless")
     context.driver = webdriver.Chrome(options=options)
-    context.driver.implicitly_wait(context.WAIT_SECONDS)  # seconds
-    # -- SET LOG LEVEL: behave --logging-level=ERROR ...
-    # on behave command-line or in "behave.ini"
-    context.config.setup_logging()
-
+    context.driver.implicitly_wait(context.wait_seconds)
 
 def after_all(context):
     """ Executed after all tests """
