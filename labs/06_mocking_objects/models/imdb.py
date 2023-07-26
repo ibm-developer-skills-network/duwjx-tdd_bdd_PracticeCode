@@ -18,7 +18,7 @@ class IMDb:
         """Search for a movie by Title"""
         logger.info("Searching IMDb for Title: %s", title)
         results = requests.get(f"https://imdb-api.com/API/SearchTitle/{self.apikey}/{title}")
-        if results.status_code == 200: 
+        if results.status_code == 200:
             return results.json()
         return {}
 
