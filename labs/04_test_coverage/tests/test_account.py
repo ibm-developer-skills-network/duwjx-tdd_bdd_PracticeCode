@@ -4,7 +4,7 @@ Test Cases TestAccountModel
 import json
 from random import randrange
 from unittest import TestCase
-from models import db
+from models import app, db
 from models.account import Account, DataValidationError
 
 ACCOUNT_DATA = {}
