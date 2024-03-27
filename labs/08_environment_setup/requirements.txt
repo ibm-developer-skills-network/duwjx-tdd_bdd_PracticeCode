@@ -1,5 +1,5 @@
-# Behavior Driven Development
+# Behavior Driven Development dependencies
 behave==1.2.6
-selenium==3.141.0
+selenium==4.16.0
 compare==0.2b0
-requests==2.27.1
+requests==2.31.0
