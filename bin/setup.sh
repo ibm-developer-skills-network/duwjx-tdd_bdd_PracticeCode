@@ -16,7 +16,7 @@ echo "export PATH=$HOME/local/bin:$PATH" >> ~/.bashrc
 
 echo "Installing Selenium and Chrome for BDD"
 sudo apt-get update
-sudo DEBIAN_FRONTEND=noninteractive apt-get install -y sqlite3 chromium-driver python3-selenium
+sudo DEBIAN_FRONTEND=noninteractive apt-get install -y sqlite3 python3-selenium
 
 echo "Starting the Postgres Docker container..."
 make app
