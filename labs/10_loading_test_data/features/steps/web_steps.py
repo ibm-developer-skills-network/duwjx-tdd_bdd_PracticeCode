@@ -23,14 +23,14 @@ def step_impl(context):
 @when('I set the "{element_name}" to "{text_string}"')
 def step_impl(context, element_name, text_string):
     element_id = ID_PREFIX + element_name.lower().replace(' ', '_')
-    element = context.driver.find_element_by_id(element_id)
+    element = context.driver.find_element(By.ID, element_id)
     element.clear()
     element.send_keys(text_string)
 
 @when('I click the "{button}" button')
 def step_impl(context, button):
     button_id = button.lower() + '-btn'
-    context.driver.find_element_by_id(button_id).click()
+    context.driver.find_element(By.ID, button_id).click()
 
 @then('I should see the message "{message}"')
 def step_impl(context, message):
@@ -54,6 +54,6 @@ def step_impl(context, name):
 
 @then('I should not see "{name}" in the results')
 def step_impl(context, name):
-    element = context.driver.find_element_by_id('search_results')
+    element = context.driver.find_element(By.ID, 'search_results')
     error_msg = "I should not see '%s' in '%s'" % (name, element.text)
     ensure(name in element.text, False, error_msg)
