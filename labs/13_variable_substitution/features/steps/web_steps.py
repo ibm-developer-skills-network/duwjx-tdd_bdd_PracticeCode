@@ -37,7 +37,7 @@ def step_impl(context):
 
 @then('I should not see "Kitty" in the results')
 def step_impl(context):
-    element = context.driver.find_element(BY.ID, 'search_results')
+    element = context.driver.find_element(By.ID, 'search_results')
     assert "Kitty" not in element.text
 
 @then('I should not see "Leo" in the results')
