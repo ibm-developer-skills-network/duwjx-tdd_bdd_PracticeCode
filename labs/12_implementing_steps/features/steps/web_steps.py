@@ -8,6 +8,7 @@ For information on Waiting until elements are present in the HTML see:
 """
 
 from behave import given, when, then
+from selenium.webdriver.common.by import By
 
 @given('I am on the "Home Page"')
 def step_impl(context):
